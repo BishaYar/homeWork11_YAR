@@ -5,20 +5,20 @@ public class Main {
 
         System.out.println("Task 1");
         int year = 1996;
-        task_1(year);
+        defineLeapYear(year);
 
         System.out.println("Task 2");
         short clientDeviceYear = 2013;
         int clientOS = 0;
-        task_2(clientOS, clientDeviceYear);
+        selectAPIforYearOS(clientOS, clientDeviceYear);
 
         System.out.println("Task 3");
         int deliveryDistance = 95;
-        int countDays = task_3(deliveryDistance);
+        int countDays = calcDaysDelivery(deliveryDistance);
         System.out.println("Потребуется дней: " + countDays);
     }
 
-    public static void task_1 (int year)
+    public static void defineLeapYear(int year)
     {
         if ((year > 1584) && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))) {
             System.out.println(year + " год — високосный год.");
@@ -27,7 +27,7 @@ public class Main {
         }
     }
 
-    public static void task_2 (int clientOS, short clientDeviceYear)
+    public static void selectAPIforYearOS(int clientOS, short clientDeviceYear)
     {
         String operationSystem;
         int currentYear = LocalDate.now().getYear();
@@ -44,7 +44,7 @@ public class Main {
         }
     }
 
-    public static int task_3(int deliveryDistance) {
+    public static int calcDaysDelivery(int deliveryDistance) {
         int countDays = -1;
         if (deliveryDistance <= 20)
             countDays = 1;
